@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+</head>
+<body>
+
+    <h1>House Price Predictor</h1>
+
+    <p>Enter the details of a house to predict its price.</p>
+
+    <form action="/predict" method="POST">
+
+        <label>Number of Bedrooms:</label>
+        <input type="number" name="bedrooms" required>
+
+        <br><br>
+
+        <label>House Size (square metres):</label>
+        <input type="number" name="size" required>
+
+        <br><br>
+
+        <button type="submit">Predict House Price</button>
+
+    </form>
+
+    {% if prediction %}
+        <h2>Predicted House Price: ₦{{ prediction }} million</h2>
+    {% endif %}
+
+</body>
+</html>
